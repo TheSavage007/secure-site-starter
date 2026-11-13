@@ -10,7 +10,7 @@
 
 export const PRIVACY = {
   effectiveDate: '2026-07-24',
-  controller: 'Halcyon Ridge Home Services LLC',
+  controller: 'LTD Diesel',
   contactEmail: 'privacy@example.com',
   jurisdiction: 'Arizona, United States'
 };
