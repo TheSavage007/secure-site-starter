@@ -2,7 +2,7 @@
 
 A framework free starter kit for small business websites that need to look professional, capture leads safely, and respect visitor privacy. It packages the patterns I use across client builds: two page templates, a guarded form pipeline, a consent gate for third party embeds, a privacy config that drives the policy page, and a hardened security header set.
 
-> The demo brand is **LTD Diesel**, used with permission. Every phone number and street address in this repo is a placeholder in the fictional 555 range, and emails use the reserved example.com domain. No client or personal contact data is included.
+> The demo brand is **LTD Diesel**, used with permission. The phone number is a placeholder in the fictional 555 range, and emails use the reserved example.com domain. No client or personal contact data is included.
 
 ## What's Inside
 
