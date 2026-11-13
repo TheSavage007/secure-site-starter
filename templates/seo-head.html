@@ -1,0 +1,116 @@
+<!--
+  seo-head.html
+  Paste everything between the two HEAD BLOCK markers into your <head>.
+  Replace every example.com with the real domain before you ship.
+  robots.txt and sitemap.xml contents sit at the bottom of this file.
+-->
+
+<!-- ========== HEAD BLOCK START ========== -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Halcyon Ridge Home Services | Phoenix, Arizona</title>
+<meta name="description" content="One sentence a search engine can show. Keep it under 160 characters and put the service and the city in it." />
+<link rel="canonical" href="https://example.netlify.app/" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#1C1C1E" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Halcyon Ridge Home Services" />
+<meta property="og:title" content="Halcyon Ridge Home Services | Phoenix, Arizona" />
+<meta property="og:description" content="Same sentence as the meta description." />
+<meta property="og:url" content="https://example.netlify.app/" />
+<meta property="og:image" content="https://example.netlify.app/og.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Halcyon Ridge Home Services | Phoenix, Arizona" />
+<meta name="twitter:description" content="Same sentence as the meta description." />
+<meta name="twitter:image" content="https://example.netlify.app/og.jpg" />
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<!-- LocalBusiness schema. This is what feeds the map pack. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Halcyon Ridge Home Services",
+  "image": "https://example.netlify.app/og.jpg",
+  "url": "https://example.netlify.app/",
+  "telephone": "(480) 555-0142",
+  "email": "hello@example.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4120 E Demo Ridge Pkwy",
+    "addressLocality": "Phoenix",
+    "addressRegion": "AZ",
+    "postalCode": "85004",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 33.4484, "longitude": -112.0740 },
+  "areaServed": [
+    { "@type": "Place", "name": "Ahwatukee" },
+    { "@type": "Place", "name": "South Phoenix" },
+    { "@type": "Place", "name": "Tempe" },
+    { "@type": "Place", "name": "Chandler" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "sameAs": []
+}
+</script>
+<!-- ========== HEAD BLOCK END ========== -->
+
+
+<!--
+========== robots.txt ==========
+Save the block below as robots.txt at the site root.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://example.netlify.app/sitemap.xml
+
+
+========== sitemap.xml ==========
+Save the block below as sitemap.xml at the site root.
+Update lastmod when you push real changes.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.netlify.app/</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://example.netlify.app/#services</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://example.netlify.app/#contact</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
+
+
+========== _redirects ==========
+Save the block below as _redirects at the publish root if you are not using netlify.toml.
+
+/*    /index.html   200
+-->

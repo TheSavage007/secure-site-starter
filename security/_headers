@@ -1,0 +1,59 @@
+# _headers
+# Netlify security and privacy header set.
+# Save this at the publish root with no file extension.
+# If you already use netlify.toml, keep one or the other, not both.
+#
+# CSP is tuned to the stack these sites actually run:
+#   Google Fonts, Google Maps embeds, base64 images, Netlify Forms,
+#   Formspree, and the Base44 SDK.
+# Delete any source below that a given site does not use. Tighter is better.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://app.base44.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://app.base44.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(self), camera=(), microphone=(), payment=(), usb=(), magnetometer=(), accelerometer=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-Permitted-Cross-Domain-Policies: none
+  X-DNS-Prefetch-Control: off
+
+# Admin and lead dashboard pages stay out of search entirely
+/leads
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store, no-cache, must-revalidate, private
+
+/admin/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store, no-cache, must-revalidate, private
+
+# Thank you pages leak the fact that a form was filled. Keep them out of the index.
+/thank-you
+  X-Robots-Tag: noindex, nofollow
+
+# Fingerprinted build assets can cache forever
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML never caches, so a fix ships immediately
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+
+# ============================================================
+# HARDENING PATH
+# The policy above allows 'unsafe-inline' scripts because the
+# standalone templates use inline onclick handlers and an inline
+# <style> block. To drop 'unsafe-inline':
+#   1. Move every inline script into an external .js file.
+#   2. Replace onclick="sp('services')" with data-route="services"
+#      and let spa-router.js bind the listeners.
+#   3. Move the inline <style> block into styles.css.
+#   4. Then swap the script-src and style-src directives for:
+#        script-src 'self' https://app.base44.com;
+#        style-src 'self' https://fonts.googleapis.com;
+# Test at securityheaders.com and observatory.mozilla.org after
+# every change. A broken CSP fails silently in the console.
+# ============================================================
