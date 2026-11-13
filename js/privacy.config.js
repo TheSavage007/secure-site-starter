@@ -12,7 +12,7 @@ export const PRIVACY = {
   effectiveDate: '2026-07-24',
   controller: 'LTD Diesel',
   contactEmail: 'privacy@example.com',
-  jurisdiction: 'Arizona, United States'
+  jurisdiction: 'Tennessee, United States'
 };
 
 /**
